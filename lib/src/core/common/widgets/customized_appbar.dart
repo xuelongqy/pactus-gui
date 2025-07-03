@@ -83,7 +83,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 ),
               ),
             ),
-            const Spacer(),
+            Expanded(
+              child: GestureDetector(
+                behavior: HitTestBehavior.opaque,
+                onDoubleTap: _toggleMaximize,
+                child: const SizedBox.expand(),
+              ),
+            ),
             Row(
               children: [
                 if (isDashboard) ...[
